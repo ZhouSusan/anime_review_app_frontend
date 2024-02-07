@@ -1,23 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState, useEffect } from 'react';
+import { getAllAnimes }  from './assets/AnimeService';  
 
 function App() {
+
+  const [animes, setAnimes] = useState();
+
+  const getAnimes = async() => {
+    try {
+      const response = await getAllAnimes();
+      console.log(response.data);
+      setAnimes(response.data);
+    } catch(err) {
+      console.error(err);
+    }
+  }
+
+  useEffect(() => {
+    getAnimes();
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
     </div>
   );
 }
