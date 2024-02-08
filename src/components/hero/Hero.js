@@ -1,6 +1,9 @@
 import './Hero.css';
 import Carousel from 'react-material-ui-carousel';
 import { Paper } from '@mui/material';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCirclePlay } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 export const Hero = ({animes}) => {
     return (
@@ -18,6 +21,16 @@ export const Hero = ({animes}) => {
                                             </div>
                                             <div className="anime-title">
                                                 <h4>{anime.title}</h4>
+                                            </div>
+                                            <div className="button-container">
+                                                <Link to={`/Trailer/${anime.trailerLink.substring(anime.trailerLink.length - 11)}`}>
+                                                    <div className="play-button-icon-container">
+                                                        <FontAwesomeIcon 
+                                                            className="play-button-icon"
+                                                            icon = {faCirclePlay}
+                                                        />
+                                                    </div>
+                                                </Link>
                                             </div>
                                         </div>
                                     </div>
