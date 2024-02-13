@@ -3,9 +3,16 @@ import Carousel from 'react-material-ui-carousel';
 import { Paper } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCirclePlay } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import  Button from 'react-bootstrap/Button';
 
 export const Hero = ({animes}) => {
+    const navigate = useNavigate();
+
+    function reviews (animeId) 
+    {
+        navigate(`/Reviews/${animeId}`);
+    }
     return (
         <div className="anime-carousel-container">
             <Carousel>
@@ -31,6 +38,9 @@ export const Hero = ({animes}) => {
                                                         />
                                                     </div>
                                                 </Link>
+                                                <div>
+                                                    <Button variant='info' onClick={() => reviews(anime.imdbId)}>Reviews</Button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
