@@ -39,7 +39,7 @@ export const Hero = ({animes}) => {
                                                     </div>
                                                 </Link>
                                                 <div>
-                                                    <Button variant='info' onClick={() => reviews(anime.imdbId)}>Reviews</Button>
+                                                    <Button variant="outline-info" onClick={() => reviews(anime.imdbId)}>Reviews</Button>
                                                 </div>
                                             </div>
                                         </div>

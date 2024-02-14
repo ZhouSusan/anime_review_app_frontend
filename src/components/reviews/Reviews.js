@@ -40,7 +40,7 @@ const Reviews = ({getAnimeData, anime, reviews, setReviews}) => {
             </Row>
             <Row className="mt-2">
                 <Col>
-                    <img src={anime?.poster} alt=""  width="100%" height="100%" />
+                    <img src={anime?.poster} alt="" className="img-fluid" />
                 </Col>
                 <Col>
                     {
